@@ -1,0 +1,359 @@
+<?xml version="1.0" ?>
+<sdf version="1.11">
+  <model name='diff_drive'>
+    <link name="base_footprint">
+      <pose>0 0 0 0 0 0</pose>
+    </link>
+
+    <link name="chassis">
+      <pose>0 0 0.475 0 0 0</pose>
+
+      <visual name="visual_chassis">
+        <geometry>
+          <cylinder>
+            <radius>0.38</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.2 1.0 0.2 1</ambient>
+          <diffuse>0.2 1.0 0.2 1</diffuse>
+          <specular>0.2 1.0 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="front_caster_post">
+        <pose>0.36 0 -0.25 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.2 1.0 0.2 1</ambient>
+          <diffuse>0.2 1.0 0.2 1</diffuse>
+          <specular>0.2 1.0 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_front_caster">
+        <pose>0.36 0 -0.4 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="rear_caster_post">
+        <pose>-0.36 0 -0.25 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.2 1.0 0.2 1</ambient>
+          <diffuse>0.2 1.0 0.2 1</diffuse>
+          <specular>0.2 1.0 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_rear_caster">
+        <pose>-0.36 0 -0.4 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="collision_chassis">
+        <geometry>
+          <cylinder>
+            <radius>0.38</radius>
+            <length>0.5</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="collision_front_caster">
+        <pose>0.36 0 -0.4 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="collision_rear_caster">
+        <pose>-0.36 0 -0.4 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <inertial>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>0.2847</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.2847</iyy>
+          <iyz>0</iyz>
+          <izz>0.361</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="left_wheel">
+      <pose>0 0.45 0.225 -1.5707963267948966 0 0</pose>
+
+      <visual name="visual_left_wheel">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_left_hub1">
+        <geometry>
+          <box>
+            <size>0.02 0.075 0.12</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1.0 0.2 0.2 1</ambient>
+          <diffuse>1.0 0.2 0.2 1</diffuse>
+          <specular>1.0 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_left_hub2">
+        <geometry>
+          <box>
+            <size>0.075 0.02 0.12</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1.0 0.2 0.2 1</ambient>
+          <diffuse>1.0 0.2 0.2 1</diffuse>
+          <specular>1.0 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="collision_left_wheel">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="right_wheel">
+      <pose>0 -0.45 0.225 -1.5707963267948966 0 0</pose>
+
+      <visual name="visual_right_wheel">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_right_hub1">
+        <geometry>
+          <box>
+            <size>0.02 0.075 0.12</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1.0 0.2 0.2 1</ambient>
+          <diffuse>1.0 0.2 0.2 1</diffuse>
+          <specular>1.0 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="visual_right_hub2">
+        <geometry>
+          <box>
+            <size>0.075 0.02 0.12</size>
+          </box>
+        </geometry>
+
+        <material>
+          <ambient>1.0 0.2 0.2 1</ambient>
+          <diffuse>1.0 0.2 0.2 1</diffuse>
+          <specular>1.0 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="collision_right_wheel">
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="lidar">
+      <pose>0.45 0 0.475 0 0 0</pose>
+      <visual name="visual_lidar">
+        <geometry>
+          <cylinder>
+            <radius>0.075</radius>
+            <length>0.075</length>
+          </cylinder>
+        </geometry>
+
+        <material>
+          <ambient>0.0 0.2 1.0 1</ambient>
+          <diffuse>0.0 0.2 1.0 1</diffuse>
+          <specular>0.0 0.2 1.0 1</specular>
+        </material>
+      </visual>
+      <sensor name='gpu_lidar' type='gpu_lidar'>"
+        <gz_frame_id>lidar</gz_frame_id>
+        <pose>0 0 0 0 0 0</pose>
+        <topic>scan</topic>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>640</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-1.396263</min_angle>
+                    <max_angle>1.396263</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>1</samples>
+                    <resolution>0.01</resolution>
+                    <min_angle>0</min_angle>
+                    <max_angle>0</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.08</min>
+                <max>30.0</max>
+                <resolution>0.01</resolution>
+            </range>
+        </ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+
+    <joint name="left_wheel_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="chassis_joint" type="fixed">
+      <parent>base_footprint</parent>
+      <child>chassis</child>
+    </joint>
+
+    <joint name="lidar_joint" type="fixed">
+      <parent>chassis</parent>
+      <child>lidar</child>
+    </joint>
+
+    <joint name="right_wheel_joint" type="revolute">
+      <parent>chassis</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <plugin filename="RoundbotInterfacePlugin" name="roundbot_gazebo::RoundbotInterfacePlugin">
+      <pub_tf>true</pub_tf>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>/model/roundbot/joint_states</topic>
+    </plugin>
+  </model>
+</sdf>

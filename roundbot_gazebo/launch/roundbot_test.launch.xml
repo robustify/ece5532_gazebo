@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--
+    This launch file is used to test Roundbot in different worlds with verbose mode on to more easily debug issues.
+
+    World names:
+        roundbot_gps_world
+        roundbot_maze_world
+    -->
+    <arg name="world_name" default="roundbot_gps_world" description="Name of the world file to test" />
+
+    <include file="$(find-pkg-share ece5532_gazebo)/launch/gazebo_bringup.launch.py">
+        <arg name="robot_sdf_file" value="$(find-pkg-share roundbot_description)/models/roundbot/model.sdf" />
+        <arg name="world_sdf_file" value="$(find-pkg-share roundbot_gazebo)/worlds/$(var world_name).sdf" />
+        <arg name="gz_bridge_file" value="$(find-pkg-share roundbot_gazebo)/config/ros_gz_bridge.yaml" />
+        <arg name="verbose" value="true" />
+    </include>
+
+    <node pkg="rviz2" exec="rviz2" name="roundbot_test" args="-d $(find-pkg-share roundbot_gazebo)/rviz/roundbot_test.rviz">
+        <param name="use_sim_time" value="true" />
+    </node>
+
+</launch>
