@@ -5,10 +5,11 @@
     This launch file is used to test Roundbot in different worlds with verbose mode on to more easily debug issues.
 
     World names:
-        roundbot_gps_world
-        roundbot_maze_world
+        roundbot_depot
+        roundbot_empty
+        roundbot_maze
     -->
-    <arg name="world_name" default="roundbot_gps_world" description="Name of the world file to test" />
+    <arg name="world_name" default="roundbot_empty" description="Name of the world file to test" />
 
     <include file="$(find-pkg-share ece5532_gazebo)/launch/gazebo_bringup.launch.py">
         <arg name="robot_sdf_file" value="$(find-pkg-share roundbot_description)/models/roundbot/model.sdf" />

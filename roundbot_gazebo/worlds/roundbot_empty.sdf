@@ -104,14 +104,6 @@
       <pose>0 0 0 0 0 0</pose>
       <include merge="true">
         <uri>package://roundbot_description/models/roundbot</uri>
-        <experimental:params>
-            <sensor element_id="chassis" action="add" name="navsat_sensor" type="navsat">
-              <gz_frame_id>base_footprint</gz_frame_id>
-              <always_on>1</always_on>
-              <update_rate>5</update_rate>
-              <topic>navsat</topic>
-            </sensor>
-        </experimental:params>
       </include>
     </model>
   </world>
