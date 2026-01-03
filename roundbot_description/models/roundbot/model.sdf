@@ -1,18 +1,18 @@
 <?xml version="1.0" ?>
 <sdf version="1.11">
-  <model name='diff_drive'>
+  <model name='roundbot'>
     <link name="base_footprint">
       <pose>0 0 0 0 0 0</pose>
     </link>
 
     <link name="chassis">
-      <pose>0 0 0.475 0 0 0</pose>
+      <pose>0 0 0.2375 0 0 0</pose>
 
       <visual name="visual_chassis">
         <geometry>
           <cylinder>
-            <radius>0.38</radius>
-            <length>0.5</length>
+            <radius>0.19</radius>
+            <length>0.25</length>
           </cylinder>
         </geometry>
 
@@ -23,11 +23,11 @@
         </material>
       </visual>
       <visual name="front_caster_post">
-        <pose>0.36 0 -0.25 0 0 0</pose>
+        <pose>0.18 0 -0.125 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.02</radius>
-            <length>0.2</length>
+            <radius>0.01</radius>
+            <length>0.1</length>
           </cylinder>
         </geometry>
 
@@ -38,10 +38,10 @@
         </material>
       </visual>
       <visual name="visual_front_caster">
-        <pose>0.36 0 -0.4 0 0 0</pose>
+        <pose>0.18 0 -0.2 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.025</radius>
           </sphere>
         </geometry>
 
@@ -52,11 +52,11 @@
         </material>
       </visual>
       <visual name="rear_caster_post">
-        <pose>-0.36 0 -0.25 0 0 0</pose>
+        <pose>-0.18 0 -0.125 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.02</radius>
-            <length>0.2</length>
+            <radius>0.01</radius>
+            <length>0.1</length>
           </cylinder>
         </geometry>
 
@@ -67,10 +67,10 @@
         </material>
       </visual>
       <visual name="visual_rear_caster">
-        <pose>-0.36 0 -0.4 0 0 0</pose>
+        <pose>-0.18 0 -0.2 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.025</radius>
           </sphere>
         </geometry>
 
@@ -84,16 +84,16 @@
       <collision name="collision_chassis">
         <geometry>
           <cylinder>
-            <radius>0.38</radius>
-            <length>0.5</length>
+            <radius>0.19</radius>
+            <length>0.25</length>
           </cylinder>
         </geometry>
       </collision>
       <collision name="collision_front_caster">
-        <pose>0.36 0 -0.4 0 0 0</pose>
+        <pose>0.18 0 -0.2 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.025</radius>
           </sphere>
         </geometry>
         <surface>
@@ -106,10 +106,10 @@
         </surface>
       </collision>
       <collision name="collision_rear_caster">
-        <pose>-0.36 0 -0.4 0 0 0</pose>
+        <pose>-0.18 0 -0.2 0 0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.05</radius>
+            <radius>0.025</radius>
           </sphere>
         </geometry>
         <surface>
@@ -123,7 +123,7 @@
       </collision>
 
       <inertial>
-        <mass>5.0</mass>
+        <mass>2.0</mass>
         <inertia>
           <ixx>0.2847</ixx>
           <ixy>0</ixy>
@@ -136,13 +136,13 @@
     </link>
 
     <link name="left_wheel">
-      <pose>0 0.45 0.225 -1.5707963267948966 0 0</pose>
+      <pose>0 0.225 0.1125 -1.5707963267948966 0 0</pose>
 
       <visual name="visual_left_wheel">
         <geometry>
           <cylinder>
-            <radius>0.2</radius>
-            <length>0.1</length>
+            <radius>0.1</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
 
@@ -155,7 +155,7 @@
       <visual name="visual_left_hub1">
         <geometry>
           <box>
-            <size>0.02 0.075 0.12</size>
+            <size>0.02 0.075 0.06</size>
           </box>
         </geometry>
 
@@ -168,7 +168,7 @@
       <visual name="visual_left_hub2">
         <geometry>
           <box>
-            <size>0.075 0.02 0.12</size>
+            <size>0.075 0.02 0.06</size>
           </box>
         </geometry>
 
@@ -182,14 +182,14 @@
       <collision name="collision_left_wheel">
         <geometry>
           <cylinder>
-            <radius>0.2</radius>
-            <length>0.1</length>
+            <radius>0.1</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
       </collision>
 
       <inertial>
-        <mass>1.0</mass>
+        <mass>0.25</mass>
         <inertia>
           <ixx>0.01</ixx>
           <ixy>0</ixy>
@@ -202,13 +202,13 @@
     </link>
 
     <link name="right_wheel">
-      <pose>0 -0.45 0.225 -1.5707963267948966 0 0</pose>
+      <pose>0 -0.225 0.1125 -1.5707963267948966 0 0</pose>
 
       <visual name="visual_right_wheel">
         <geometry>
           <cylinder>
-            <radius>0.2</radius>
-            <length>0.1</length>
+            <radius>0.1</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
 
@@ -221,7 +221,7 @@
       <visual name="visual_right_hub1">
         <geometry>
           <box>
-            <size>0.02 0.075 0.12</size>
+            <size>0.02 0.075 0.06</size>
           </box>
         </geometry>
 
@@ -234,7 +234,7 @@
       <visual name="visual_right_hub2">
         <geometry>
           <box>
-            <size>0.075 0.02 0.12</size>
+            <size>0.075 0.02 0.06</size>
           </box>
         </geometry>
 
@@ -248,8 +248,8 @@
       <collision name="collision_right_wheel">
         <geometry>
           <cylinder>
-            <radius>0.2</radius>
-            <length>0.1</length>
+            <radius>0.1</radius>
+            <length>0.05</length>
           </cylinder>
         </geometry>
       </collision>
@@ -268,12 +268,12 @@
     </link>
 
     <link name="lidar">
-      <pose>0.45 0 0.475 0 0 0</pose>
+      <pose>0.2 0 0.2 0 0 0</pose>
       <visual name="visual_lidar">
         <geometry>
           <cylinder>
-            <radius>0.075</radius>
-            <length>0.075</length>
+            <radius>0.025</radius>
+            <length>0.025</length>
           </cylinder>
         </geometry>
 
