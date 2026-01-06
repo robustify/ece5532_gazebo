@@ -291,10 +291,10 @@
         <ray>
             <scan>
                 <horizontal>
-                    <samples>640</samples>
+                    <samples>1000</samples>
                     <resolution>1</resolution>
-                    <min_angle>-1.396263</min_angle>
-                    <max_angle>1.396263</max_angle>
+                    <min_angle>-2.0</min_angle>
+                    <max_angle>2.0</max_angle>
                 </horizontal>
                 <vertical>
                     <samples>1</samples>
@@ -349,7 +349,7 @@
     </joint>
 
     <plugin filename="RoundbotInterfacePlugin" name="roundbot_gazebo::RoundbotInterfacePlugin">
-      <pub_tf>true</pub_tf>
+      <pub_tf>false</pub_tf>
     </plugin>
 
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">

@@ -21,7 +21,50 @@
       <background>0.699999988 0.699999988 0.699999988 1</background>
       <sky></sky>
       <shadows>false</shadows>
+      <grid>false</grid>
     </scene>
+
+    <gui fullscreen="0">
+      <plugin filename="GzScene3D" name="3D View">
+        <ignition-gui>
+          <title>3D View</title>
+          <property type="bool" key="showTitleBar">false</property>
+          <property type="string" key="state">docked</property>
+        </ignition-gui>
+
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.4 0.4 0.4</ambient_light>
+        <background_color>0.8 0.8 0.8</background_color>
+        <camera_pose>-0.5 -10.0 14.0 0 1.0 1.5707</camera_pose>
+        <camera_clip>
+          <near>0.1</near>
+          <far>100</far>
+        </camera_clip>
+      </plugin>
+      <plugin filename="WorldControl" name="World control">
+        <ignition-gui>
+          <title>World control</title>
+          <property type="bool" key="showTitleBar">false</property>
+          <property type="bool" key="resizable">false</property>
+          <property type="double" key="height">72</property>
+          <property type="double" key="width">121</property>
+          <property type="double" key="z">1</property>
+
+          <property type="string" key="state">floating</property>
+          <anchors target="3D View">
+            <line own="left" target="left"/>
+            <line own="bottom" target="bottom"/>
+          </anchors>
+        </ignition-gui>
+
+        <play_pause>true</play_pause>
+        <step>true</step>
+        <start_paused>true</start_paused>
+
+      </plugin>
+    </gui>
+
     <model name='ground_plane'>
       <static>true</static>
       <link name='link'>
@@ -93,7 +136,7 @@
 
     <model name="roundbot">
       <self_collide>true</self_collide>
-      <pose>7 -7 0.5 0 0 1.5707</pose>
+      <pose>7 -7 0.1 0 0 1.5707</pose>
       <include merge="true">
         <uri>package://roundbot_description/models/roundbot</uri>
       </include>
