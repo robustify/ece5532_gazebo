@@ -1,0 +1,4 @@
+format: glob
+
+# Backup Blender saves
+*.blend1

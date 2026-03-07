@@ -63,32 +63,39 @@ def launch_setup(context):
     )
 
     bridge_config_file = LaunchConfiguration('gz_bridge_file').perform(context)
-    bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        parameters=[{
-            'config_file': bridge_config_file,
-            'qos_overrides./tf_static.publisher.durability': 'transient_local',
-        }],
-        output='screen'
-    )
+    if bridge_config_file != '':
+        bridge = Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            parameters=[{
+                'config_file': bridge_config_file,
+                'qos_overrides./tf_static.publisher.durability': 'transient_local',
+            }],
+            output='screen'
+        )
+    else:
+        bridge = None
 
     sdf_file = LaunchConfiguration('robot_sdf_file').perform(context)
-    with open(sdf_file, 'r') as f:
-        robot_desc = f.read()
+    if sdf_file != '':
+        with open(sdf_file, 'r') as f:
+            robot_desc = f.read()
 
-    robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='both',
-        parameters=[
-            {'use_sim_time': True},
-            {'robot_description': robot_desc},
-        ]
-    )
+        robot_state_publisher = Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            name='robot_state_publisher',
+            output='both',
+            parameters=[
+                {'use_sim_time': True},
+                {'robot_description': robot_desc},
+            ]
+        )
 
-    return [gz_sim, bridge, robot_state_publisher]
+    else:
+        robot_state_publisher = None
+
+    return [x for x in [gz_sim, bridge, robot_state_publisher] if x is not None]
 
 def generate_launch_description():
     return LaunchDescription([
