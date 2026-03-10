@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sdf version='1.11'>
+  <model name='dog'>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='dog_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <visual name='dog_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.0254 0.0254 0.0254</scale>
+            <uri>package://ece5532_gazebo/models/dog/meshes/13463_Australian_Cattle_Dog_v3.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='dog_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.0254 0.0254 0.0254</scale>
+            <uri>package://ece5532_gazebo/models/dog/meshes/13463_Australian_Cattle_Dog_v3.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>

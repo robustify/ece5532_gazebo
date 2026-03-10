@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sdf version='1.11'>
+  <model name='cat'>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='cat_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <visual name='cat_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://ece5532_gazebo/models/cat/meshes/12221_Cat_v1_l3.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='cat_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>package://ece5532_gazebo/models/cat/meshes/12221_Cat_v1_l3.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>
