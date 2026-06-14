@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<sdf version="1.11">
+  <model name="traffic_light">
+    <static>false</static>
+
+    <link name="light_fixture">
+      <gravity>false</gravity>
+      <pose relative_to="cross_beam_frame">0.13 -0.535 6.0 -1.5707 0 0</pose>
+      <inertial>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>0.1</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.1</iyy><iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 0.535 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.6 1.2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 0.535 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.6 1.2</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="green_off">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0.075 0 0.175 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.001</iyy><iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="green_on">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0 0 0.175 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-6</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-6</iyy><iyz>0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 1 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="yellow_off">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0.075 0 0.525 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.001</iyy><iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 1 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="yellow_on">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0 0 0.525 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-6</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-6</iyy><iyz>0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>1 1 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="red_off">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0.075 0 0.875 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.001</iyy><iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="red_on">
+      <gravity>false</gravity>
+      <pose relative_to="light_fixture">0 0 0.875 0 1.5707 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-6</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-6</iyy><iyz>0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>1 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="green_switch" type="prismatic">
+      <parent>green_off</parent>
+      <child>green_on</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.101</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="green_base" type="fixed">
+      <parent>light_fixture</parent>
+      <child>green_off</child>
+    </joint>
+
+    <joint name="yellow_switch" type="prismatic">
+      <parent>yellow_off</parent>
+      <child>yellow_on</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.101</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="yellow_base" type="fixed">
+      <parent>light_fixture</parent>
+      <child>yellow_off</child>
+    </joint>
+
+    <joint name="red_switch" type="prismatic">
+      <parent>red_off</parent>
+      <child>red_on</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.101</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="red_base" type="fixed">
+      <parent>light_fixture</parent>
+      <child>red_off</child>
+    </joint>
+
+    <link name="base">
+      <gravity>false</gravity>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>100.0</mass>
+        <inertia>
+          <ixx>1.0</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1.0</iyy><iyz>0</iyz>
+          <izz>1.0</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 3.275 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>6.55</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 3.275 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>6.55</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="cross_beam">
+      <gravity>false</gravity>
+      <pose>0 0 6.015 1.5707 0 0</pose>
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+          <ixx>0.1</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.1</iyy><iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <pose>0 0 3.0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.125</radius>
+            <length>6.0</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 3.0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.125</radius>
+            <length>6.0</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <frame name="base_frame" attached_to="base">
+    </frame>
+
+    <frame name="cross_beam_frame">
+      <pose relative_to="base_frame">0 0 6.015 1.5707 0 0</pose>
+    </frame>
+
+    <joint name="cross_beam_fixed" type="fixed">
+      <parent>base</parent>
+      <child>cross_beam</child>
+    </joint>
+
+    <joint name="light_mount" type="fixed">
+      <parent>cross_beam</parent>
+      <child>light_fixture</child>
+    </joint>
+
+    <plugin filename="TrafficLightPlugin" name="ece5532_gazebo::TrafficLightPlugin">
+      <!-- Space-delimited sequence_entry elements: "color duration [flashing]" -->
+      <!-- Specify sequence_entry values in the including world's <include><plugin> block. -->
+      <!-- If none are provided, the plugin uses a default green/yellow/red sequence. -->
+      <!-- Override via gz topic: /model/<name>/light_override (Int32) -->
+      <!-- -1=sequence, 0=RED, 1=RED_FLASH, 2=YELLOW, 3=YELLOW_FLASH, 4=GREEN, 5=GREEN_FLASH -->
+    </plugin>
+  </model>
+</sdf>

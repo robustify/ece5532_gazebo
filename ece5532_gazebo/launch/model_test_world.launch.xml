@@ -2,7 +2,7 @@
 <launch>
 
     <include file="$(find-pkg-share ece5532_gazebo)/launch/gazebo_bringup.launch.py">
-        <arg name="world_sdf_file" value="$(find-pkg-share ece5532_gazebo)/worlds/oval_track_world.sdf"/>
+        <arg name="world_sdf_file" value="$(find-pkg-share ece5532_gazebo)/worlds/model_test_world.sdf"/>
     </include>
 
 </launch>

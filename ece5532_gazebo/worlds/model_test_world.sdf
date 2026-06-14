@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version='1.11'>
-  <world name='oval_track'>
+  <world name='model_test_world'>
     <!-- Common settings-->
     <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
     <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
@@ -48,7 +48,7 @@
         <scene>scene</scene>
         <ambient_light>0.4 0.4 0.4</ambient_light>
         <background_color>0.5 0.8 0.95</background_color>
-        <camera_pose>0 0 300 0 1.57 0</camera_pose>
+        <camera_pose>50 0 30 0 0.75 3.14159</camera_pose>
         <camera_clip>
           <near>1.5</near>
           <far>5000</far>
@@ -221,6 +221,82 @@
         <uri>package://ece5532_gazebo/models/curved_road_100m</uri>
       </include>
     </model>
+
+    <model name="intersection">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>50 0 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/intersection</uri>
+      </include>
+    </model>
+
+    <model name="search_and_rescue">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>-30 0 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/search_and_rescue_building</uri>
+      </include>
+    </model>
+
+    <model name="maze">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>-30 30 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/maze</uri>
+      </include>
+    </model>
+
+    <model name="default_traffic_light">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>0 0 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/traffic_light</uri>
+      </include>
+    </model>
+
+    <model name="custom_traffic_light">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>0 -10 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/traffic_light</uri>
+      </include>
+      <plugin filename="TrafficLightPlugin" name="ece5532_gazebo::TrafficLightPlugin">
+        <sequence_entry>yellow 2.0 true</sequence_entry>
+      </plugin>
+    </model>
+
+    <model name="stop_sign">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>0 -2 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/stop_sign</uri>
+      </include>
+    </model>
+
+    <model name="cat">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>0 -4 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/cat</uri>
+      </include>
+    </model>
+
+    <model name="dog">
+      <static>true</static>
+      <self_collide>false</self_collide>
+      <pose>0 -6 0 0 0 0</pose>
+      <include merge="true">
+        <uri>package://ece5532_gazebo/models/dog</uri>
+      </include>
+    </model>
+
 
     <!-- pi = 3.14159265359 -->
     <!-- pi/2 = 1.57079632679-->
