@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<sdf version='1.11'>
+  <model name='stop_sign'>
+    <pose>0 0 0 0 0 0</pose>
+    <static>1</static>
+
+    <link name='base'>
+
+      <!-- Sign panel -->
+      <visual name='sign_panel'>
+        <!-- Mesh origin is at sign center; elevate to 7 ft pole height + apothem (half flat-to-flat) -->
+        <pose>0 0 2.515 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>package://ece5532_gazebo/models/stop_sign/meshes/stop_sign.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Support post: 2-inch diameter galvanized steel pipe, 7 ft (2.134 m) tall -->
+      <visual name='pole'>
+        <pose>0 0 1.067 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0254</radius>
+            <length>2.134</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.52 1</ambient>
+          <diffuse>0.6 0.6 0.63 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Sign collision: box bounding the octagon panel -->
+      <!-- Octagon flat-to-flat = 0.762 m (30 in); depth = 0.003 m -->
+      <collision name='sign_col'>
+        <pose>0 0 2.515 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.003 0.762 0.762</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Pole collision -->
+      <collision name='pole_col'>
+        <pose>0 0 1.067 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0254</radius>
+            <length>2.134</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,29 @@
+# U.S. Stop Sign materials
+
+# Front face: UV-mapped texture (red face + white border + STOP text)
+newmtl stop_face
+map_Kd stop_sign_face.png
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.150 0.150 0.150
+Ns 15.0
+d 1.0
+illum 2
+
+# Edge strip: white retroreflective
+newmtl stop_white
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.300 0.300 0.300
+Ns 15.0
+d 1.0
+illum 2
+
+# Back of sign: aluminum gray
+newmtl stop_back
+Ka 0.350 0.350 0.370
+Kd 0.550 0.550 0.580
+Ks 0.400 0.400 0.400
+Ns 60.0
+d 1.0
+illum 2
